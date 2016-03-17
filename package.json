@@ -1,0 +1,28 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "node based jwt testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achristie/jwt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achristie/jwt/issues"
+  },
+  "homepage": "https://github.com/achristie/jwt#readme",
+  "author": "Andrew",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "faker": "^3.0.1",
+    "jwt-authentication": "^0.1.1",
+    "nodemon": "^1.9.1"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,28 @@
+<!DOCType html>
+<html ng-app='app'>
+	<head lang="en">
+		<meta chartset='UTF-8'>
+		<title>JWT Testing</title>
+	</head>
+	<body ng-controller='MainCtrl as vm'>
+		<h1> Get User! </h1>
+		
+		<div>
+			<form ng-submit='vm.login(vm.userId, vm.password)'>
+				<label>User Id: <input type='text' ng-model='vm.userId'/></label><br/>
+				<label>Password: <input type='password' ng-model='vm.password'/></label><br/>
+				<button type='submit'>Login</button>
+				
+			</form>
+		<hr>	
+		<div>
+			<h1> Welcome {{vm.user.userId}} </h1>
+			<button ng-click='vm.getRandomUser()'>Get User</button>
+			<button ng-click='vm.logout()'>Logout</button>
+			<pre ng-bind='vm.randomUser | json'></pre>
+		</div>
+	
+		<script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js'></script>
+		<script src='app.js'></script>	
+	</body>
+</html>
