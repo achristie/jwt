@@ -20,7 +20,7 @@
 				vm.user = res.data.user;
 			}, handleError);
 		};
-		 
+		
 		vm.logout = function () {
 			UserFactory.logout();
 			vm.user = null;
