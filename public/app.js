@@ -9,6 +9,10 @@
 	app.controller('MainCtrl', function (RandomUserFactory, UserFactory) {
 		var vm = this;
 		
+		UserFactory.getUser().then(function (res) {
+			vm.user = res.data.user;
+		}, handleError);
+		
 		vm.getRandomUser = function () {
 			RandomUserFactory.getUser().then(function (d) {
 				vm.randomUser = d.data;
@@ -31,7 +35,7 @@
 		}
 	});
 	
-	app.factory('UserFactory', function ($http, API_URL, AuthTokenFactory) {
+	app.factory('UserFactory', function ($http, $q, API_URL, AuthTokenFactory) {
 		return {
 			login: function (userId, password) {
 				return $http.post(API_URL + '/login', {
@@ -44,6 +48,13 @@
 			},
 			logout: function () {
 				AuthTokenFactory.setToken();
+			},
+			getUser: function () {
+				if (AuthTokenFactory.getToken()) {
+					return $http.get(API_URL + '/me');
+				} else {
+					return $q.reject({data: 'client has no auth token'});
+				}
 			}
 		};
 	});

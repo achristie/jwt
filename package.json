@@ -20,6 +20,7 @@
     "body-parser": "^1.15.0",
     "cors": "^2.7.1",
     "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
     "faker": "^3.0.1",
     "jwt-authentication": "^0.1.1",
     "nodemon": "^1.9.1"
